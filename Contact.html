@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Rentals</title>
+
+<script type="text/javascript">
+        window.onload = function() 
+		{document.getElementById('contact-form').addEventListener('submit', function(event) 
+			{event.preventDefault(); // generate a five digit number for the contact_number variable 
+			this.contact_number.value = Math.random() * 100000 | 0; // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {console.log('SUCCESS!');}, function(error) {console.log('FAILED...', error);});
+            });
+        }
+    </script>
+<style>
+	div.s1 {position: absolute; top: 0px; background-color:white;}
+	div.s2 {position: absolute; bottom: 0px; background-color:white;}
+	body {background-image: url('cars.jfif');}
+	.walk {margin-top:10%; margin-left:40%; text-align:center; width:450px;
+			height:475px; background-color: white ; color:red; mrgin: 0 auto; padding-top:1px; padding-bottom:50px;}
+			
+	.clearfix ::after {content:""; display:table; clear:both;}
+	
+	nav li {display:inline-block; margin-left:30px; margin-right:63px; padding-top:25px;
+			position:relative;}
+	nav a::before {content:""; display:block; height:5px; width:100%; background-color:red; position:absolute; top: 0;}
+	</style>
+</head>
+<body style="background-color:red;">
+
+<header class="clearfix">
+	<div class="s1" style="width:100%;">
+		<img style="float: left;" src="futurerentals.png" alt="futurerentals.com" width="250px" height="75px">
+			<h3 style="float:left; padding:7px; top:0px;"><i>MAKING LIFE ACCESSIBLE</i></h3>
+			<nav style="float:right;">
+				<ul style="margin:0; padding:0; list-style:none;">
+					<li><a href="index.html">Home</a></li>	
+					<li><a href="4doorcars.html">Vehicles (4-doors)</a></li>					
+					<li><a href="coupes.html">Coupes (2-doors)</a></li>
+					<li><a href="FAQ.html">Frequently Asked Questions</a></li>
+				</ul>
+			</nav>
+	</div>
+</header>
+<div class="walk">
+<form style="padding:25%;">
+	<h2 style="color:black;"><i>Contact Us</i></h2>
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" name="user_email">
+		<label>Phone</label>
+		<input type="text" name="phone_number">
+		<br>
+		<br>
+        <label>Message</label>
+        <textarea name="message"></textarea>
+		<br>
+        <input type="submit" value="Send">
+    </form>
+</div>
+
+<div style="column-count: 3;">
+	
+</div>
+
+</body>
+</html>
